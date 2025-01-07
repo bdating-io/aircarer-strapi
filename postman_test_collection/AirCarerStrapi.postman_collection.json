@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "80f6f72a-6877-43a7-b5b5-e4d27369b9ec",
+		"name": "AirCarerStrapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "671741"
+	},
+	"item": [
+		{
+			"name": "get articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1337/api/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Jobs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer ed244a1e130ddead01879c9be86f494b881491cd6c6528c116c84d65ceb017629cec60372c7fe6c50f926c8047c7ec298348c4ab93b20838dfbb929e162f183055a8dfb4665bc3c761cf413335fe2ee998c10e53c1f4c7a8532242a10b02d908ee51d61c3db637506b2c40cc05cb1c20ea549bf4cf9d8e109850bff8e8ec3f8b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:1337/api/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a Job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 6c4bf6055b6f31a7e03a6a28d53a4973898a1ecf36e44e5cc87a197bf8577fdb940f56b816fb5aff8400814ca4ea7fac037cb3db5b5f637f64f91bb7f3c13b175bd29de59e1aceb43d55b07f172a1a8b84b5705bb53e355a641c1fe5e1b1a727c0c3f293164a7f28c833a1cc48f818def5025b43eeca246082b406e529b502c3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"data\": {\n    \"type\": \"shortTermClean\",\n    \"title\": \"City Apt Clean 2\"\n  }\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

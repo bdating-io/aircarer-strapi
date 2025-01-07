@@ -5,8 +5,11 @@ Strapi comes with a full featured [Command Line Interface](https://docs.strapi.i
 
 ### local database ###
 
-``` docker-compose -f docker-compose-db-only.yml up
+``` 
+docker-compose -f docker-compose-db-only.yml up
 ```
+for the first time, create database named acstrapi
+restore db content using dbeaver, with database/dump-acstrapi-202501071850.sql
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
