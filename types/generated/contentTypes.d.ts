@@ -552,6 +552,10 @@ export interface ApiJobJob extends Struct.CollectionTypeSchema {
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
+    createdby: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
