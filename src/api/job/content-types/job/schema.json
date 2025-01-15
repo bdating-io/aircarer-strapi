@@ -4,7 +4,7 @@
   "info": {
     "singularName": "job",
     "pluralName": "jobs",
-    "displayName": "job",
+    "displayName": "Job",
     "description": ""
   },
   "options": {
@@ -22,7 +22,9 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 32
     },
     "title": {
       "pluginOptions": {
@@ -30,11 +32,18 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 256
     },
-    "createdby": {
+    "postedby": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "bidder": {
+      "type": "relation",
+      "relation": "manyToOne",
       "target": "plugin::users-permissions.user"
     }
   }

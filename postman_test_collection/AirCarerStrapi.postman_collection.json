@@ -27,7 +27,7 @@
 			"response": []
 		},
 		{
-			"name": "get Jobs",
+			"name": "get all Jobs",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -38,7 +38,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:1337/api/jobs",
+					"raw": "http://localhost:1337/api/jobs?populate=*",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -47,6 +47,45 @@
 					"path": [
 						"api",
 						"jobs"
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Job by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer ed244a1e130ddead01879c9be86f494b881491cd6c6528c116c84d65ceb017629cec60372c7fe6c50f926c8047c7ec298348c4ab93b20838dfbb929e162f183055a8dfb4665bc3c761cf413335fe2ee998c10e53c1f4c7a8532242a10b02d908ee51d61c3db637506b2c40cc05cb1c20ea549bf4cf9d8e109850bff8e8ec3f8b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:1337/api/jobs/g6hijufhqqs3c7wnuenjvfsz?populate=*",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"jobs",
+						"g6hijufhqqs3c7wnuenjvfsz"
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "*"
+						}
 					]
 				}
 			},
@@ -65,7 +104,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \n  \"data\": {\n    \"type\": \"shortTermClean\",\n    \"title\": \"City Apt Clean 2\"\n  }\n}\n\n",
+					"raw": "{ \n  \"data\": {\n    \"type\": \"shortTermClean\",\n    \"title\": \"title\"\n  }\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,6 +121,111 @@
 					"path": [
 						"api",
 						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customJobAction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 6c4bf6055b6f31a7e03a6a28d53a4973898a1ecf36e44e5cc87a197bf8577fdb940f56b816fb5aff8400814ca4ea7fac037cb3db5b5f637f64f91bb7f3c13b175bd29de59e1aceb43d55b07f172a1a8b84b5705bb53e355a641c1fe5e1b1a727c0c3f293164a7f28c833a1cc48f818def5025b43eeca246082b406e529b502c3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"data\": {\n    \"type\": \"shortTermClean 2\",\n    \"title\": \"title 3\",\n    \"postedby\": 2,\n    \"bidder\":  3\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/postjob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"postjob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customJobAction Full Access Token!!!",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer ed244a1e130ddead01879c9be86f494b881491cd6c6528c116c84d65ceb017629cec60372c7fe6c50f926c8047c7ec298348c4ab93b20838dfbb929e162f183055a8dfb4665bc3c761cf413335fe2ee998c10e53c1f4c7a8532242a10b02d908ee51d61c3db637506b2c40cc05cb1c20ea549bf4cf9d8e109850bff8e8ec3f8b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"data\": {\n    \"type\": \"shortTermClean\",\n    \"title\": \"title\",\n    \"postedby\": \"j02v9zmm1d1253yyqdivtdul\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/postjob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"postjob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customJobAction InvalidInput",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer ed244a1e130ddead01879c9be86f494b881491cd6c6528c116c84d65ceb017629cec60372c7fe6c50f926c8047c7ec298348c4ab93b20838dfbb929e162f183055a8dfb4665bc3c761cf413335fe2ee998c10e53c1f4c7a8532242a10b02d908ee51d61c3db637506b2c40cc05cb1c20ea549bf4cf9d8e109850bff8e8ec3f8b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"data\": {\n    \"type\": \"shortTermClean 12111111111111111111111111111111111111111111111111111111111111111111111\",\n    \"title\": \"\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/postjob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"postjob"
 					]
 				}
 			},
